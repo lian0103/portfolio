@@ -13,7 +13,4 @@ export default defineConfig({
   server: {
     open: true,
   },
-  build: {
-    outDir: './docs'
-  }
 })

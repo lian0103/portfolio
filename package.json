@@ -4,9 +4,11 @@
   "scripts": {
     "dev": "vite --host --port 3015",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^3.2.3",
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0",
     "vue": "^3.2.24",
