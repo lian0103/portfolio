@@ -1,0 +1,24 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+.titleText {
+  @apply text-3xl font-extrabold text-indigo-600;
+}
+
+.btnCus {
+  @apply inline-flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-indigo-600 transition duration-150 ease-in-out bg-white border border-transparent rounded-md hover:text-indigo-500 focus:outline-none;
+}
+.btnCus2 {
+  @apply inline-flex items-center justify-center px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-indigo-600 border border-transparent rounded-md hover:bg-indigo-500 focus:outline-none;
+}
+
+@font-face {
+  font-family: "IkeaSofa";
+  src: url("./assets/IKEA-SOFA-SANS.otf");
+}
+.fontIkea {
+  font-family: "IkeaSofa";
+}
