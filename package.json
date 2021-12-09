@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "gh-pages": "^3.2.3",
+    "pinia": "^2.0.6",
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0",
     "vue": "^3.2.24",

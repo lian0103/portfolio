@@ -13,7 +13,7 @@ const routes = [
     component: About,
   },
   {
-    path: `${rootPath}/notes`,
+    path: `${rootPath}notes`,
     meta: { title: "前端開發筆記" },
     component: Notes,
   },

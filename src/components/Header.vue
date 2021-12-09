@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted } from "vue";
+import routes from "@/routes";
 
 const handleLinkBtn = (e) => {
   let collapse = document.querySelector("#navbar-collapse");
@@ -12,16 +13,16 @@ onMounted(() => {
   toggleBtn.onclick = handleLinkBtn;
 });
 
-const menuList = [
-  {
-    name: "關於我",
-    route: "/about",
-  },
-  {
-    name: "前端開發筆記",
-    route: "/notes",
-  },
-];
+const menuList = routes
+  .map((route) => {
+    if (route.meta?.title) {
+      return {
+        name: route.meta.title,
+        route: route.path,
+      };
+    }
+  })
+  .filter((route) => route);
 </script>
 
 <template>
