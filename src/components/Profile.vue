@@ -13,7 +13,7 @@
           style="background-image: url('src/assets/dopee.jpg')"
         ></div>
 
-        <h2 class="titleName text-3xl">DOPI</h2>
+        <h2 class="fontIkea text-3xl">DOPI</h2>
         <div class="titleUnderline"></div>
         <p class="profileBody">
           <i class="fas fa-briefcase listIcon"></i>
@@ -25,7 +25,7 @@
         </p>
         <p class="py-8 text-sm">有養一隻貓 ...XD <br/> 主要在工作之餘的時間，學習網頁後端的技術。</p>
 
-        <h2 class="titleName text-xl">FrontEnd</h2>
+        <h2 class="fontIkea text-xl">FrontEnd</h2>
         <div class="iconsBox">
           <img
             class="icon"
@@ -64,7 +64,7 @@
           />
         </div>
 
-        <h2 class="titleName text-xl">BackEnd</h2>
+        <h2 class="fontIkea text-xl">BackEnd</h2>
         <div class="iconsBox">
           <img
             class="icon"
@@ -93,7 +93,7 @@
           />
         </div>
 
-        <h2 class="titleName text-xl">tools</h2>
+        <h2 class="fontIkea text-xl">tools</h2>
         <div class="iconsBox">
           <img
             class="icon"
@@ -148,9 +148,6 @@
 
     .mobilePic {
       @apply block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center;
-    }
-    .titleName {
-      @apply fontIkea;
     }
     .titleUnderline {
       @apply mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25;
