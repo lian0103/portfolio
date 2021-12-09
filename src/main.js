@@ -9,8 +9,11 @@ const app = createApp(App);
 
 app.use(pinia);
 
+const isProduction = process.env.NODE_ENV === "production";
+const rootPath = isProduction ? "/vue3Blog/" : "/";
+
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(rootPath),
   routes,
 });
 
