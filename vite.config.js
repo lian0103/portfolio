@@ -1,19 +1,20 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { resolve } from 'path'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import { resolve } from "path";
 
 export default defineConfig({
-  publicPath:'/vue3Blog/',
+  publicPath: "/",
+  base: "/vue3Blog/",
   plugins: [vue()],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      "@": resolve(__dirname, "src"),
     },
   },
   server: {
     open: true,
   },
   build: {
-    outDir: './docs'
-  }
-})
+    outDir: "./docs",
+  },
+});
