@@ -77,6 +77,7 @@ const {
               <a
                 v-if="repo"
                 :href="repo"
+                target="_blank"
                 class="text-cyan-600 hover:text-cyan-700 text-base"
               >
                 Github Repo &rarr;
@@ -84,6 +85,7 @@ const {
                             <a
                 v-if="!repo"
                 :href="repo"
+                target="_blank"
                 class="text-gray-200 text-base cursor-not-allowed"
               >
                 Github Repo &rarr;
