@@ -3,16 +3,22 @@ import Notes from "./views/Notes.vue";
 import NotFound from "./views/NotFound.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
-export const routes = [
+
+const isProduction = process.env.NODE_ENV === "production";
+const rootPath = isProduction ? "/vue3Blog/" : "/";
+
+const routes = [
   {
-    path: "/about",
+    path: `${rootPath}about`,
     meta: { title: "關於我" },
     component: About,
   },
   {
-    path: "/notes",
+    path: `${rootPath}/notes`,
     meta: { title: "前端開發筆記" },
     component: Notes,
   },
-  { path: "/:path(.*)", redirect:'/about' },
+  { path: "/:path(.*)", redirect: `${rootPath}about` },
 ];
+
+export default routes;
