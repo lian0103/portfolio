@@ -1,6 +1,5 @@
 import About from "./views/About.vue";
 import Notes from "./views/Notes.vue";
-import NotFound from "./views/NotFound.vue";
 
 /** @type {import('vue-router').RouterOptions['routes']} */
 

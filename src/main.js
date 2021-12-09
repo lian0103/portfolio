@@ -13,10 +13,3 @@ const router = createRouter({
 
 app.use(router);
 app.mount("#app");
-
-const isProduction = process.env.NODE_ENV === "production";
-if (isProduction) {
-  document
-    .getElementsByName("head")
-    .append('<link rel="icon" href="vue3Blog/assets/favicon.ico">');
-}
