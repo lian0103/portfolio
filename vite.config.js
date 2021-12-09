@@ -4,7 +4,7 @@ import { resolve } from "path";
 
 export default defineConfig({
   publicPath: "/",
-  base: "/vue3Blog/",
+  base: "/vue3Blog/", //for github page
   plugins: [vue()],
   resolve: {
     alias: {
