@@ -10,7 +10,7 @@
         <!-- Image for mobile view-->
         <div
           class="mobilePic"
-          style="background-image: url('src/assets/dopee.jpg')"
+          style="background-image: url('https://i.imgur.com/XQ9AXFV.jpg')"
         ></div>
 
         <h2 class="fontIkea text-3xl">DOPI</h2>
