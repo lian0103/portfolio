@@ -4,7 +4,7 @@ const props = defineProps({
 });
 
 const cardData = props.data || {};
-const imgURL = `src/assets/${cardData.imgName}` || null;
+const imgURL = cardData.imgName || "https://i.imgur.com/XQ9AXFV.jpg";
 const {
   title = "",
   dsc = "",
