@@ -1,11 +1,12 @@
 <script setup>
-
+import ProfileVue from "@/components/Profile.vue";
+import CardsVue from "@/components/Cards/index.vue";
 </script>
 
 <template>
-  <div class="container px-4 bg-purple-300">
-      <h1>ABOUT</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quis explicabo nisi minima id accusamus nostrum optio, sit vero nihil.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, maiores.</p>
+  <div class="container px-2">
+    <ProfileVue />
+
+    <CardsVue />
   </div>
 </template>

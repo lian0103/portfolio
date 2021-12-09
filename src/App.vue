@@ -8,7 +8,7 @@ let counter = ref(0);
 <template>
   <div>
     <vHeader></vHeader>
-    <main class="container mx-auto">
+    <main class="container mx-auto bg-gray-100">
       <router-view />
     </main>
   </div>
