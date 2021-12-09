@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig({
-  publicPath:'/',
+  publicPath:'/vue3Blog/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -13,4 +13,7 @@ export default defineConfig({
   server: {
     open: true,
   },
+  build: {
+    outDir: './docs'
+  }
 })
