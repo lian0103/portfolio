@@ -14,5 +14,9 @@ export const routes = [
     meta: { title: "前端開發筆記" },
     component: Notes,
   },
-  { path: "/:path(.*)", redirect:'/about' },
+  {
+    path: "*",
+    name: "404",
+    redirect: "/about",
+  },
 ];
