@@ -1,0 +1,142 @@
+<script setup>
+import { ref, reactive } from "vue";
+import { useMsgStore } from "@/stores/message";
+import { writeMsgData } from "@/firebase/index";
+import MsgVue from "@/components/Msg.vue";
+
+const addShow = ref(false);
+
+const state = reactive({
+  errorMsg: "",
+});
+
+const msgStore = useMsgStore();
+msgStore.getMsg();
+
+const strRegex = /(<([^>]+)>)/gi;
+const handleSend = () => {
+  let txtForm = document.getElementById("txtForm");
+  let nameVal = txtForm.name.value;
+  let msgVal = txtForm.msg.value;
+  if (!nameVal || !msgVal) {
+    state.errorMsg = "require name & msg";
+    return false;
+  }
+  if (strRegex.test(nameVal) || strRegex.test(msgVal)) {
+    state.errorMsg = "no tag<> in name & msg";
+    return false;
+  }
+
+  writeMsgData(nameVal, msgVal);
+  txtForm.msg.value = "";
+  msgStore.getMsg();
+  addShow.value = false;
+};
+</script>
+
+<template>
+  <div class="container p-4 pt-8 relative">
+    <h1 class="fontIkea text-2xl">MESSAGE</h1>
+    <button class="absolute right-2 top-2 btnCus2" @click="addShow = !addShow">
+      {{ !addShow ? "ADD" : "CLOSE" }}
+    </button>
+    <div class="msgboxOut">
+      <MsgVue
+        v-for="data in msgStore.getMsglist"
+        :key="data.time"
+        :data="data"
+      />
+      <form
+        id="txtForm"
+        action=""
+        :class="addShow ? 'block' : 'hidden'"
+        class="
+          w-full
+          md:w-1/2
+          mx-auto
+          px-6
+          py-6
+          z-10
+          absolute
+          top-16
+          left-0
+          md:left-1/4
+          bg-white-100 bg-gradient-to-br
+          from-sky-500
+          to-indigo-500
+        "
+      >
+        <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2 fontIkea"
+            for="name"
+          >
+            Name
+          </label>
+          <input
+            class="
+              shadow
+              appearance-none
+              border
+              rounded
+              w-full
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            name="name"
+            type="text"
+            placeholder=""
+          />
+        </div>
+        <div class="mb-0 relative">
+          <label class="block text-gray-700 text-sm font-bold mb-2 fontIkea">
+            words
+          </label>
+          <textarea
+            class="
+              shadow
+              form-textarea
+              mt-1
+              block
+              w-full
+              border
+              rounded
+              py-2
+              px-3
+              text-gray-700
+              leading-tight
+              focus:outline-none focus:shadow-outline
+            "
+            name="msg"
+            rows="5"
+            placeholder=""
+            maxLength="200"
+          ></textarea>
+          <span class="text-black-200 absolute left-0 bottom-[-22px]">{{
+            state.errorMsg
+          }}</span>
+        </div>
+
+        <div class="flex items-center justify-between mt-8">
+          <button
+            class="btnCus2 mx-auto"
+            @click="handleSend"
+            type="button"
+          >
+            <span>Send</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.msgboxOut {
+  @apply flex flex-col md:flex-row md:flex-wrap overflow-y-scroll w-full;
+  max-height: calc(100vh - 200px);
+}
+</style>

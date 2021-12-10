@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import About from "@/views/About.vue";
-import Notes from "@/views/Notes.vue";
+import Message from "@/views/Message.vue";
 import NotFound from "@/views/NotFound.vue";
 
 export const routes = [
@@ -15,8 +15,8 @@ export const routes = [
   },
   {
     path: `/notes`,
-    meta: { title: "前端開發筆記" },
-    component: Notes,
+    meta: { title: "留言區" },
+    component: Message,
   },
   { path: "/:path(.*)*", component: NotFound },
 ];

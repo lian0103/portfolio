@@ -3,6 +3,7 @@ import "./tailwind.css";
 import App from "./App.vue";
 import router from "./routers/index.js";
 import pinia from "@/stores/index";
+import '@/firebase/index';
 
 const app = createApp(App);
 
