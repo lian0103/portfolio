@@ -55,6 +55,7 @@ const menuList = routes
           md:mt-0
           bg-gray-100
           md:bg-white
+          overflow-x-hidden
         "
         id="navbar-collapse"
       >
