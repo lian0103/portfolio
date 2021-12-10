@@ -16,9 +16,6 @@ export const routes = [
   { path: "/:path(.*)", redirect: `/about` },
 ];
 
-const isProduction = process.env.NODE_ENV === "production";
-const rootPath = isProduction ? "/vue3Blog/" : "/";
-
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
