@@ -23,7 +23,7 @@
           <i class="fas fa-map-marker listIcon"></i>
           Yingge District,New Teipei City,Taiwan
         </p>
-        <p class="py-8 text-sm">有養一隻貓 ...XD <br/> 主要在工作之餘的時間，學習網頁後端的技術。</p>
+        <p class="py-8 text-sm">有養一隻貓 ...XD <br/> 主要在工作之餘的時間，學習新網頁知識。</p>
 
         <h2 class="fontIkea text-xl">FrontEnd</h2>
         <div class="iconsBox">

@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from "vue";
-import routes from "@/routes";
+import { routes } from "@/routers/index";
 
 const handleLinkBtn = (e) => {
   let collapse = document.querySelector("#navbar-collapse");
