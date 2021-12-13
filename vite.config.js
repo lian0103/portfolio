@@ -5,8 +5,8 @@ import { resolve } from "path";
 const isProduction = process.env.NODE_ENV === "production";
 
 export default defineConfig({
-  publicPath: isProduction ? "/vue3Blog/" : "/",
-  base: isProduction ? "/vue3Blog/" : "/",
+  publicPath: isProduction ? "/portfolio/" : "/",
+  base: isProduction ? "/portfolio/" : "/",
   plugins: [vue()],
   resolve: {
     alias: {
