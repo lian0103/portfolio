@@ -37,7 +37,7 @@ const menuList = routes
         <router-link
           class="font-bold text-xl text-indigo-600 fontIkea"
           to="/about"
-          >BLOG DOPI</router-link
+          >DOPI</router-link
         >
 
         <button class="hamberBtn md:hidden" id="navbar-toggle">

@@ -14,13 +14,13 @@
           style="background-image: url('https://i.imgur.com/XQ9AXFV.jpg')"
         ></div>
 
-        <h2 class="fontIkea text-3xl">DOPI</h2>
+        <h2 class="fontIkea text-3xl">JASON LIEN</h2>
         <div class="titleUnderline"></div>
-        <p class="profileBody">
+        <p class="profileBody w-4/5 md:w-full mx-auto">
           <i class="fas fa-briefcase listIcon"></i>
           web developer
         </p>
-        <p class="profileBody text-gray-600">
+        <p class="profileBody text-gray-600 w-4/5 md:w-full mx-auto">
           <i class="fas fa-map-marker listIcon"></i>
           Yingge District,New Teipei City,Taiwan
         </p>
