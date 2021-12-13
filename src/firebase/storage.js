@@ -1,11 +1,12 @@
-import { getStorage, ref, getMetadata } from "firebase/storage";
+import { getStorage, ref , getDownloadURL } from "firebase/storage";
 import app from "./index";
 
 const storage = getStorage(app);
-export function getFirebaseImg(name = "dopee.jpg") {
-  const imagesRef = ref(storage, `images/${name}`);
 
-  return getMetadata(imagesRef);
+export function getFirebaseImgUrl(name = "dopee.jpg") {
+  const pathReference = ref(storage, `images/${name}`);
+  return getDownloadURL(pathReference);
 }
+
 
 export default {};

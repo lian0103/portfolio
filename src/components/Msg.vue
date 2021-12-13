@@ -1,5 +1,6 @@
 <script setup>
 import moment from "moment";
+import { useImgStore } from "@/stores/images";
 const props = defineProps({
   data: Object,
 });
@@ -9,12 +10,14 @@ const msg = data.message;
 const time = moment(data.time).calendar();
 const username = data.username;
 const pic = data.pic || "dopee";
+const imgStore = useImgStore();
+const picUrlMap = imgStore.getPicUrlMap;
 </script>
 
 <template>
   <div class="msgBox">
     <div class="inner">
-      <img :src="`../assets/${pic}.jpg`" class="headImg" alt="" loading="lazy" />
+      <img :src="picUrlMap[pic]" class="headImg" alt="" loading="lazy" />
       <div class="flex flex-col w-full">
         <div class="flex flex-row justify-between">
           <p

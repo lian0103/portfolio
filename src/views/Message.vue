@@ -11,7 +11,9 @@ const state = reactive({
   errorMsg: "",
 });
 const imgStore = useImgStore();
-const picArr = imgStore .getPiclist;
+
+const picArr = imgStore.getPiclist;
+const picUrlMap = imgStore.getPicUrlMap;
 const picActive = ref(picArr[0]);
 
 const msgStore = useMsgStore();
@@ -83,9 +85,10 @@ const handleSend = () => {
               class="h-20 w-20 rounded-full mr-4 mb-2"
               v-for="pic in picArr"
               :key="pic"
-              :src="`../assets/${pic}.jpg`"
+              :src="picUrlMap[pic]"
               alt="pic"
               @click="picActive = pic"
+              loading="lazy"
             />
           </div>
           <label
