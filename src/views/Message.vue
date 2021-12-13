@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from "vue";
 import { useMsgStore } from "@/stores/message";
-import { writeMsgData } from "@/firebase/index";
+import { writeMsgData } from "@/firebase/db";
 import MsgVue from "@/components/Msg.vue";
 
 const addShow = ref(false);

@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, set } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDP_LNtihk9N2QEB2S1BQ6EksJ65Svqa9E",
@@ -13,16 +12,5 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-export const msgRef = ref(db, "messages");
 
-export function writeMsgData(name, message) {
-  const timeId = new Date().valueOf();
-  set(ref(db, `messages/${timeId}`), {
-    username: name,
-    message: message,
-    time: timeId,
-  });
-}
-
-export default {};
+export default app;

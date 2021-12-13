@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 import { onValue } from "firebase/database";
-import { msgRef } from "@/firebase/index";
+import { msgRef } from "@/firebase/db";
 
 export const useMsgStore = defineStore({
   id: "message",
