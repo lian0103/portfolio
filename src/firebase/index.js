@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDP_LNtihk9N2QEB2S1BQ6EksJ65Svqa9E",
+  apiKey: import.meta.env.VITE_FIREBASE_APIKEY,
   authDomain: "message-47a1c.firebaseapp.com",
   databaseURL:
     "https://message-47a1c-default-rtdb.asia-southeast1.firebasedatabase.app",
