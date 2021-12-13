@@ -133,7 +133,7 @@
 
     <div class="w-full lg:w-2/5">
       <img
-        src="../assets/dopee.jpg"
+        src="assets/dopee.jpg"
         class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block"
       />
     </div>

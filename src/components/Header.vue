@@ -31,7 +31,7 @@ const menuList = routes
       <div class="flex justify-between items-center">
         <img
           class="rounded-full h-16 w-16 py-2 px-2"
-          src="../assets/dopee.jpg"
+          src="assets/dopee.jpg"
           alt="logo"
         />
         <router-link

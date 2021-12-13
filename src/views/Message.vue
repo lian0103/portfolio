@@ -1,6 +1,7 @@
 <script setup>
 import { ref, reactive } from "vue";
 import { useMsgStore } from "@/stores/message";
+import { useImgStore } from "@/stores/images";
 import { writeMsgData } from "@/firebase/db";
 import MsgVue from "@/components/Msg.vue";
 
@@ -9,6 +10,9 @@ const addShow = ref(false);
 const state = reactive({
   errorMsg: "",
 });
+const imgStore = useImgStore();
+const picArr = imgStore .getPiclist;
+const picActive = ref(picArr[0]);
 
 const msgStore = useMsgStore();
 msgStore.getMsg();
@@ -27,7 +31,7 @@ const handleSend = () => {
     return false;
   }
 
-  writeMsgData(nameVal, msgVal);
+  writeMsgData(nameVal, msgVal, picActive.value);
   txtForm.msg.value = "";
   msgStore.getMsg();
   addShow.value = false;
@@ -37,8 +41,8 @@ const handleSend = () => {
 <template>
   <div class="container p-4 pt-8 relative">
     <h1 class="fontIkea text-2xl">MESSAGE</h1>
-    <button class="absolute right-2 top-2 btnCus2" @click="addShow = !addShow">
-      {{ !addShow ? "ADD" : "CLOSE" }}
+    <button class="absolute right-2 top-2 btnCus2" @click="addShow = true">
+      ADD
     </button>
     <div class="msgboxOut">
       <MsgVue
@@ -61,12 +65,29 @@ const handleSend = () => {
           top-16
           left-0
           md:left-1/4
-          bg-white-100 bg-gradient-to-br
-          from-sky-500
-          to-indigo-500
+          bg-gray-50
+          border
+          rounded
         "
       >
         <div class="mb-4">
+          <label
+            class="block text-gray-700 text-sm font-bold mb-2 fontIkea"
+            for="name"
+          >
+            PIC
+          </label>
+          <div class="flex">
+            <img
+              :class="picActive == pic ? 'picActive' : ''"
+              class="h-20 w-20 rounded-full mr-4 mb-2"
+              v-for="pic in picArr"
+              :key="pic"
+              :src="`../assets/${pic}.jpg`"
+              alt="pic"
+              @click="picActive = pic"
+            />
+          </div>
           <label
             class="block text-gray-700 text-sm font-bold mb-2 fontIkea"
             for="name"
@@ -85,6 +106,7 @@ const handleSend = () => {
               text-gray-700
               leading-tight
               focus:outline-none focus:shadow-outline
+              border-slate-500
             "
             name="name"
             type="text"
@@ -102,13 +124,14 @@ const handleSend = () => {
               mt-1
               block
               w-full
-              border
-              rounded
               py-2
               px-3
               text-gray-700
               leading-tight
               focus:outline-none focus:shadow-outline
+              border
+              rounded
+              border-slate-500
             "
             name="msg"
             rows="5"
@@ -120,14 +143,14 @@ const handleSend = () => {
           }}</span>
         </div>
 
-        <div class="flex items-center justify-between mt-8">
-          <button
-            class="btnCus2 mx-auto"
-            @click="handleSend"
-            type="button"
-          >
+        <div class="flex items-center justify-center mt-8">
+          <button class="btnCus2 mr-4" @click="handleSend" type="button">
             <span>Send</span>
           </button>
+          <i
+            class="fas fa-times absolute top-2 right-4 text-2xl cursor-pointer"
+            @click="addShow = false"
+          ></i>
         </div>
       </form>
     </div>
@@ -138,5 +161,9 @@ const handleSend = () => {
 .msgboxOut {
   @apply flex flex-col md:flex-row md:flex-wrap overflow-y-scroll w-full;
   max-height: calc(100vh - 200px);
+}
+
+.picActive {
+  outline: 2px solid #4f46e5;
 }
 </style>
