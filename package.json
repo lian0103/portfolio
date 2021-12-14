@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite --host --port 3015",
     "build": "vite build",
+    "build-stage":"vite build --mode staging",
     "serve": "vite preview",
     "deploy": "gh-pages -d build"
   },
