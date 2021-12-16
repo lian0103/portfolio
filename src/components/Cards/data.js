@@ -19,23 +19,15 @@ export const cardsData = [
         title:"PTT crawler",
         imgName:"https://i.imgur.com/AlHeife.jpg",
         dsc:"套件使用: request、puppeteer、cheerio",
-        feats:['股票版','表特版'],
+        feats:['股票版、表特版'],
         repo:'https://github.com/lian0103/node-crawler',
         onlineDemo:'https://node-ptt-crawler.herokuapp.com'
-    },
-    {
-        title:"vue component package",
-        imgName:"https://i.imgur.com/ni2dmJK.jpg",
-        dsc:"把 vue component 打包到 npm ",
-        feats:['透過vue-cli啟開發環境','透過vue-cli打包成可發佈package','透過vue-cli打包出可預覽的demo頁面'],
-        repo:'https://github.com/lian0103/lien0103-vue-pkg',
-        onlineDemo:'https://lian0103.github.io/lien0103-vue-pkg/'
     },
     {
         title:"export Excel",
         imgName:"https://i.imgur.com/qMjrvkE.png",
         dsc:"整理來自SheetJS庫的範例和workbook xml格式 在瀏覽器匯出Excel檔",
-        feats:['多張sheet','多個excel壓成zip','依實際需求再調整使用'],
+        feats:['多張sheet','多個excel壓成zip'],
         repo:'https://github.com/lian0103/exportExcel',
         onlineDemo:null
     },
