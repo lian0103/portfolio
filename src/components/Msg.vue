@@ -29,13 +29,13 @@ const picUrlMap = imgStore.getPicUrlMap;
         <p class="text-gray-400 text-sm">{{ time }}</p>
       </div>
     </div>
-    <p class="msgTxt">{{ msg }}</p>
+    <div class="msgTxt">{{ msg }}</div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .msgBox {
-  @apply w-full relative grid grid-cols-1 gap-4 p-4 my-8 md:m-8 border rounded-lg bg-white shadow-lg;
+  @apply w-full relative grid grid-cols-1 gap-4 p-4 my-8 md:m-4 border rounded-lg bg-white shadow-lg;
   @media screen and (min-width: 768px) {
     width: 45%;
   }
@@ -49,6 +49,8 @@ const picUrlMap = imgStore.getPicUrlMap;
   .msgTxt {
     @apply -mt-4 text-gray-500;
     word-break: break-all;
+    height:60px;
+    overflow-y: scroll;
   }
 }
 </style>

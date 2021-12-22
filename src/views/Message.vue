@@ -67,8 +67,8 @@ const handleSend = () => {
           top-16
           left-0
           md:left-1/4
-          bg-gray-50
-          border
+          bg-gray-200
+          border-l-gray-400
           rounded
         "
       >

@@ -17,7 +17,7 @@ export const useMsgStore = defineStore({
       onValue(msgRef, (snapshot) => {
         const data = snapshot.val() || {};
         let arr = Object.keys(data).map((key) => data[key]);
-        this.list = [...arr].reverse().slice(0,4);
+        this.list = [...arr].reverse().slice(0,6);
       });
     },
   },
